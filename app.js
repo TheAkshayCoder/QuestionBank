@@ -20,6 +20,10 @@ const questionSchema = new mongoose.Schema({
 })
 const Question = new mongoose.model("Product", questionSchema)
 
+app.use("/", async (req, res) => {
+    const questionsSet = await Question.find()
+    res.json({message: questionsSet})
+});
 // Create Question
 app.post('/api/question/new', async (req, res)=>{
     const questionAnswer = await Question.create(req.body)
