@@ -81,4 +81,4 @@ app.listen(4500, () => {
     console.log("server is working on http://localhost:4500/");
 })
 
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);
